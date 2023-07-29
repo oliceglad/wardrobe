@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { MakeWardrobe } from './Pages/MainPage/MakeWardrobe';
+import { Header } from './Components/Header/Header';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { MyWardrobe } from './Pages/MainPage/MyWardrobe';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/mywardrobe" Component={MyWardrobe} />
+          <Route path="/makewardrobe" Component={MakeWardrobe} />
+          <Route path="*" element={<Navigate to="/makewardrobe" />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
