@@ -1,3 +1,4 @@
+
 a {
     text-decoration: none;
 }
@@ -8,5 +9,14 @@ a {
 }
 
 .wardrobe {
-    display: flex;
+    padding-right: 100px;
+    padding-left: 100px;
+    &__container {
+        display: flex;
+    }
+
+    &__count {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
