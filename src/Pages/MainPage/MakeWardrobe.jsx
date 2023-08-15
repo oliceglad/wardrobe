@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Constructor } from '../../Components/Constructor/Constructor'
 import { Goods } from '../../Components/Goods/Goods'
 import { Button } from 'primereact/button';
+import logo from '../../assets/img/human.jpg'
 
 export const MakeWardrobe = () => {
 
@@ -10,7 +11,7 @@ export const MakeWardrobe = () => {
     return (
         <div className='wardrobe'>
             <div className='wardrobe__container'>
-                <Constructor />
+                <Constructor svgData = {logo}/>
                 <Goods />
             </div>
             <div className='wardrobe__count'>
