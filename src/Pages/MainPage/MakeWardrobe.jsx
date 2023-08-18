@@ -1,24 +1,30 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Constructor } from '../../Components/Constructor/Constructor'
 import { Goods } from '../../Components/Goods/Goods'
 import { Button } from 'primereact/button';
 import logo from '../../assets/img/human.png'
+import { setPriceHandler } from '../../redux/main-reducer';
+import { connect } from 'react-redux';
 
-export const MakeWardrobe = () => {
-
-    const [count, setCount] = useState(0)
+const MakeWardrobe = ({setPriceHandler, priceCount}) => {
 
     return (
         <div className='wardrobe'>
             <div className='wardrobe__container'>
                 <Constructor svgData = {logo}/>
-                <Goods />
+                <Goods clickHandler = {setPriceHandler} price = {priceCount}/>
             </div>
             <div className='wardrobe__count'>
-                Итого: {count} руб.
+                Итого: {priceCount} руб.
             </div>
             <Button label="Купить" style={{marginRight: 20}}/>
             <Button label="Сохранить" outlined />
         </div>
     )
 }
+
+const mapStateToProps = (state) => ({
+    priceCount: state.main.priceCount
+})
+
+export const MakeWardrobeContainer = connect(mapStateToProps, { setPriceHandler })(MakeWardrobe)

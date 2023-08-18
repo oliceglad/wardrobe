@@ -32,7 +32,7 @@ export const Constructor = ({ svgData }) => {
         //  160,70
         // ]);
 
-        sprite.on('pointermove', (e) => clickHandler(e))
+        // sprite.on('pointermove', (e) => clickHandler(e))
 
         app.stage.addChild(sprite);
 
