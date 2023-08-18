@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Constructor } from '../../Components/Constructor/Constructor'
 import { Goods } from '../../Components/Goods/Goods'
 import { Button } from 'primereact/button';
-import logo from '../../assets/img/human.jpg'
+import logo from '../../assets/img/human.png'
 
 export const MakeWardrobe = () => {
 
