@@ -7,20 +7,21 @@ import { Card } from '../UI/Card';
 const Goods = ({ clickHandler, price, requestGoods, category, isFetching, dataGoods }) => {
 
     return (
-        <div>
+        <div className={s.goods}>
             Товары
-            <button onClick={() => clickHandler(price + 1)}>
-                Добавить
-            </button>
             <button onClick={() => requestGoods(category)}>
                 Загрузить
             </button>
 
-            {isFetching ?
-            <div> Загрузка </div>
-            :  dataGoods.map(
-                (object) => <Card id = {object.id}/>
-            )}
+            {isFetching
+                ?
+                <div> Загрузка </div>
+                :
+                <div className={s.goods__flex}>
+                    {dataGoods.map(
+                        (item, index) => <Card item={item} key={index} clickHandler = {clickHandler} price = {price}/>
+                    )}
+                </div>}
         </div>
     )
 }

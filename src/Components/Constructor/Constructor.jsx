@@ -12,7 +12,7 @@ export const Constructor = ({ svgData }) => {
     useEffect(() => {
         const app = new PIXI.Application({
             width: 300,
-            height: 600,
+            height: 500,
             backgroundColor: 0xffffff,
         });
         const container = containerRef.current;
@@ -22,6 +22,8 @@ export const Constructor = ({ svgData }) => {
         const sprite = new PIXI.Sprite(imageTexture);
 
         sprite.anchor.set(0.5);
+        sprite.width = 450
+        sprite.height = 450
         sprite.x = app.screen.width / 2;
         sprite.y = app.screen.height / 2;
         sprite.eventMode = 'static';

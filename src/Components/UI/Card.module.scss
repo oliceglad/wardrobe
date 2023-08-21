@@ -1,0 +1,23 @@
+.card {
+    width: 175px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: 1px solid #000;
+    padding: 10px;
+
+    & img {
+        width: 150px;
+        height: 150px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: calc(279px - 150px);
+    }
+
+    &:not(:nth-child(4n)){
+        margin-right: 20px;
+    }
+}

@@ -3,7 +3,6 @@ a {
     text-decoration: none;
 }
 
-
 .App {
     margin-top: 20px;
 }
@@ -13,6 +12,7 @@ a {
     padding-left: 100px;
     &__container {
         display: flex;
+        justify-content: flex-start;
     }
 
     &__count {
