@@ -8,21 +8,28 @@ const Goods = ({ clickHandler, price, requestGoods, category, isFetching, dataGo
 
     return (
         <div className={s.goods}>
-            Товары
-            <button onClick={() => requestGoods(category)}>
-                Загрузить
-            </button>
-
-            {isFetching
-                ?
-                <div> Загрузка </div>
-                :
-                <div className={s.goods__flex}>
-                    {dataGoods.map(
-                        (item, index) => <Card item={item} key={index} clickHandler = {clickHandler} price = {price}/>
-                    )}
-                </div>}
-        </div>
+            <h2 className={s.goods__title}>
+                Товары
+            </h2>
+            <div>
+                {
+                    dataGoods.length > 0 ? <div className={s.goods__count}> Найдено товаров:{dataGoods.length}</div> : <button onClick={() => requestGoods(category)}>
+                        Загрузить
+                    </button>
+                }
+                {
+                    isFetching
+                        ?
+                        <div> Загрузка </div>
+                        :
+                        <div className={s.goods__flex}>
+                            {dataGoods.map(
+                                (item, index) => <Card item={item} key={index} clickHandler={clickHandler} price={price} />
+                            )}
+                        </div>
+                }
+            </div>
+        </div >
     )
 }
 
