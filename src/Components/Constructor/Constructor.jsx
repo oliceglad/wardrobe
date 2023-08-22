@@ -6,7 +6,7 @@ const clickHandler = (image) => {
     console.log(image.global)
 }
 
-export const Constructor = ({ svgData }) => {
+export const Constructor = () => {
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -17,31 +17,10 @@ export const Constructor = ({ svgData }) => {
         });
         const container = containerRef.current;
         container.appendChild(app.view);
-
-        const imageTexture = PIXI.Texture.from(svgData);
-        const sprite = new PIXI.Sprite(imageTexture);
-
-        sprite.anchor.set(0.5);
-        sprite.width = 450
-        sprite.height = 450
-        sprite.x = app.screen.width / 2;
-        sprite.y = app.screen.height / 2;
-        sprite.eventMode = 'static';
-        sprite.cursor = 'pointer';
-        // sprite.hitArea = new PIXI.Polygon([
-        //  145,70,
-        //  150,70,
-        //  160,70
-        // ]);
-
-        // sprite.on('pointermove', (e) => clickHandler(e))
-
-        app.stage.addChild(sprite);
-
         return () => {
             app.destroy(true);
         };
-    }, [svgData]);
+    }, []);
 
     return <div ref={containerRef} />;
 }

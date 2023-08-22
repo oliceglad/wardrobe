@@ -2,7 +2,6 @@ import React from 'react'
 import { Constructor } from '../../Components/Constructor/Constructor'
 import { GoodsContainer } from '../../Components/Goods/Goods'
 import { Button } from 'primereact/button';
-import logo from '../../assets/img/human.png'
 import { setPriceHandler } from '../../redux/main-reducer';
 import { connect } from 'react-redux';
 
@@ -12,7 +11,7 @@ const MakeWardrobe = ({ setPriceHandler, priceCount }) => {
     return (
         <div className='wardrobe'>
             <div className='wardrobe__container'>
-                <Constructor svgData={logo} />
+                <Constructor />
                 <GoodsContainer clickHandler={setPriceHandler} price={priceCount} category={categoryObject} />
             </div>
             <div className='wardrobe__count'>
