@@ -1,31 +1,33 @@
 import React, { useRef, useEffect } from 'react';
 import s from './Constructor.module.scss'
-import { Application, Sprite, Texture }from 'pixi.js';
-import { assetsHuman } from '../../data/assetsData';
+import { Application } from 'pixi.js';
+import { Human } from '../../graphics/Human';
+
 
 export const Constructor = () => {
     const containerRef = useRef(null);
+    const human = new Human()
 
     useEffect(() => {
-        const app = new Application({
+        var app = new Application({
             width: 300,
-            height: 500,
+            height: 520,
             backgroundColor: 0xffffff,
         });
         const container = containerRef.current;
         container.appendChild(app.view);
 
+        app.stage.addChild(human.view);
+        app.stage.position.set(300 / 2, 500 / 2);
 
-        // const texture = new Texture.from(assetsHuman.sprites[0].url)
-        // const sprite = new Sprite(texture)
+        console.log(human.view)
 
-        // sprite.anchor.set(0.5);
-
-        // app.stage.appendChild(sprite)
         return () => {
             app.destroy(true);
         };
-    }, []);
+    }, [human.view]);
 
-    return <div ref={containerRef} />;
+    return (
+        <div ref={containerRef} />
+    );
 }
