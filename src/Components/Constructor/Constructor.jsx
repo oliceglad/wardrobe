@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import s from './Constructor.module.scss'
-import { Application }from 'pixi.js';
+import { Application, Sprite, Texture }from 'pixi.js';
+import { assetsHuman } from '../../data/assetsData';
 
 export const Constructor = () => {
     const containerRef = useRef(null);
@@ -13,6 +14,14 @@ export const Constructor = () => {
         });
         const container = containerRef.current;
         container.appendChild(app.view);
+
+
+        // const texture = new Texture.from(assetsHuman.sprites[0].url)
+        // const sprite = new Sprite(texture)
+
+        // sprite.anchor.set(0.5);
+
+        // app.stage.appendChild(sprite)
         return () => {
             app.destroy(true);
         };
