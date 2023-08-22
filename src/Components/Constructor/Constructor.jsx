@@ -2,10 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import s from './Constructor.module.scss'
 import { Application }from 'pixi.js';
 
-const clickHandler = (image) => {
-    console.log(image.global)
-}
-
 export const Constructor = () => {
     const containerRef = useRef(null);
 
