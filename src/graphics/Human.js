@@ -5,9 +5,14 @@ import { assetsHuman } from '../data/assetsData';
 export const createSprite = (textureName, name, position = { x: 0, y:0}, anchor = { x: 0.5, y: 0.5 }) => {
     const sprite = new Sprite(Texture.from(textureName));
     sprite.eventMode = 'static'
+    sprite.interactive = true
     sprite.cursor = 'pointer'
     sprite.name = name
+
     sprite.on('pointerdown', () => {console.log(sprite.name)})
+          .on('pointerover', () => sprite.alpha = 0.8)
+          .on('pointerout', () => sprite.alpha = 1)
+          
     sprite.position.copyFrom(position);
     sprite.anchor.copyFrom(anchor);
     return sprite;
