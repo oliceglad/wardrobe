@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import s from './Constructor.module.scss'
-import * as PIXI from 'pixi.js';
+import { Application }from 'pixi.js';
 
 const clickHandler = (image) => {
     console.log(image.global)
@@ -10,7 +10,7 @@ export const Constructor = () => {
     const containerRef = useRef(null);
 
     useEffect(() => {
-        const app = new PIXI.Application({
+        const app = new Application({
             width: 300,
             height: 500,
             backgroundColor: 0xffffff,
