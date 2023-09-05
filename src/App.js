@@ -16,7 +16,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/mywardrobe" Component={MyWardrobe} />
-            <Route path="/makewardrobe" Component={MakeWardrobeContainer} />
+            <Route path="/makewardrobe/*" Component={MakeWardrobeContainer} />
             <Route path="*" element={<Navigate to="/makewardrobe" />} />
           </Routes>
         </div>

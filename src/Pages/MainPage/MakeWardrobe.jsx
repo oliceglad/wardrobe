@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 const MakeWardrobe = ({ setPriceHandler, priceCount }) => {
 
     const categoryObject = 'jacket'
+    
     return (
         <div className='wardrobe'>
             <div className='wardrobe__container'>

@@ -10,7 +10,7 @@ const instance = axios.create({
 
 export const mainAPI = {
 
-    getGoodsByCategory(category) {
-        return instance.get('/goods', {params: { category }})
+    getGoodsByCategory(category, gender = 'man', count = 50) {
+        return instance.get('/goods', {params: { category, gender, count }})
     }
 }
