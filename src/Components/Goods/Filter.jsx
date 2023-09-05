@@ -10,7 +10,7 @@ export const Filter = ({findGoods, s }) => {
         count: 10
     })
 
-    const category = filterObject.gender == 'man' ? 'jacket' : 'pants'
+    const category = filterObject.gender === 'man' ? 'jacket' : 'pants'
 
     const navigate = useNavigate()
 
@@ -23,14 +23,12 @@ export const Filter = ({findGoods, s }) => {
         <div>
             <div className={s.goods__filter}>
                 <Button className={s.goods__filter__gender} onClick={
-                    (event) => {
-
-
+                    () => {
                         setFilter((value) => ({
                             ...value, ['gender']: 'man'
                         }))
                     }
-                } outlined = {filterObject.gender == 'man' ? false : true}>
+                } outlined = {filterObject.gender === 'man' ? false : true}>
                     Мужчина
                 </Button>
                 <Button className={s.goods__filter__gender} onClick={
@@ -39,11 +37,11 @@ export const Filter = ({findGoods, s }) => {
                             ...value,
                             ['gender']: 'woman'
                         }))
-                } outlined = {filterObject.gender == 'woman' ? false : true}>
+                } outlined = {filterObject.gender === 'woman' ? false : true}>
                     Женщина
                 </Button>
             </div>
-            <label for='input' style={{ display: 'block' }}>
+            <label style={{ display: 'block' }}>
                 Количество товаров:
             </label>
             <InputNumber value={filterObject.count} onValueChange={

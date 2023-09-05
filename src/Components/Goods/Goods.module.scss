@@ -1,5 +1,7 @@
 .goods {
 
+    width: 100%;
+
     &__title {
         margin-top: 10px;
     }
@@ -15,6 +17,11 @@
         margin-top: 10px;
         max-height: 450px;
         overflow: scroll;
+    }
+
+    &__list {
+        width: 100%;
+        text-align: center;
     }
 
     &__filter {
