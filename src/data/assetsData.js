@@ -16,3 +16,8 @@ export const assetsHuman = {
         {name: 'Shins', url: shins}
     ]
 }
+
+
+export const assetsGoods = {
+    
+}

@@ -6,14 +6,14 @@ import { Route, Routes } from 'react-router-dom';
 import { MainGoods } from './MainGoods';
 import { Filter } from './Filter';
 
-const Goods = ({ clickHandler, price, requestGoods, category, isFetching, dataGoods }) => {
+const Goods = ({ clickHandler, price, requestGoods, isFetching, dataGoods}) => {
 
     const WrappedFilter = function(props) {
-        return (<Filter {...props} findGoods = {requestGoods} category = {category}/>);
+        return (<Filter {...props} findGoods = {requestGoods} s = {s}/>);
     };
 
     const WrappedMainGoods = function(props) {
-        return (<MainGoods {...props} clickHandler = {clickHandler} price = {price} isFetching = {isFetching} data = {dataGoods}/>);
+        return (<MainGoods {...props} clickHandler = {clickHandler} price = {price} isFetching = {isFetching} data = {dataGoods} s = {s}/>);
     };
 
 

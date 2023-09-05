@@ -16,4 +16,21 @@
         max-height: 450px;
         overflow: scroll;
     }
+
+    &__filter {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        &__gender {
+            display: inline-block;
+
+            &:first-child {
+                margin-right: 5px;
+            }
+        }
+
+        &__count {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
 }

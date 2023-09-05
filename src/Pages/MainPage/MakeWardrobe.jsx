@@ -6,14 +6,12 @@ import { setPriceHandler } from '../../redux/main-reducer';
 import { connect } from 'react-redux';
 
 const MakeWardrobe = ({ setPriceHandler, priceCount }) => {
-
-    const categoryObject = 'jacket'
     
     return (
         <div className='wardrobe'>
             <div className='wardrobe__container'>
                 <Constructor />
-                <GoodsContainer clickHandler={setPriceHandler} price={priceCount} category={categoryObject} />
+                <GoodsContainer clickHandler={setPriceHandler} price={priceCount}/>
             </div>
             <div className='wardrobe__count'>
                 Итого: {priceCount} руб.

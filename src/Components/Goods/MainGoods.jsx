@@ -1,9 +1,8 @@
 import React from 'react'
 import { Card } from '../UI/Card';
-import s from './Goods.module.scss'
 import { useNavigate } from 'react-router-dom';
 
-export const MainGoods = ({ isFetching, data, clickHandler, price }) => {
+export const MainGoods = ({ isFetching, data, clickHandler, price, s}) => {
     const navigate = useNavigate()
     return (
         <div color='black'>
