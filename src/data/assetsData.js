@@ -19,5 +19,4 @@ export const assetsHuman = {
 
 
 export const assetsGoods = {
-    
 }
