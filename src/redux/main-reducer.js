@@ -41,9 +41,9 @@ export const setPriceHandler = (newPrice) => (dispatch) => {
     }
 }
 
-export const requestGoods = (category, gender, man) => async (dispatch) => {
+export const requestGoods = (category) => async (dispatch) => {
     dispatch(toggleIsFetching(true))
-    const response = await mainAPI.getGoodsByCategory(category, gender, man)
+    const response = await mainAPI.getGoodsByCategory(category)
     if (response.status === 200) {
         dispatch(getGoods(response.data.data))
         dispatch(toggleIsFetching(false))
