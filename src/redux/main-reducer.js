@@ -3,9 +3,11 @@ import { mainAPI } from '../api/api'
 const SET_PRICE = 'SET_PRICE'
 const GET_GOODS = 'GET_GOODS'
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
+const GET_TRASH = 'GET_TRASH'
 
 const initialState = {
     priceCount: 0,
+    trashGoods: [],
     dataGoods: {},
     isFetching: true
 }
@@ -21,6 +23,9 @@ export const mainReducer = (state = initialState, action) => {
         case TOGGLE_IS_FETCHING:
             return {...state, isFetching: action.isFetching}
         
+        case GET_TRASH:
+            return {...state, trashGoods: action.trashGoods}
+        
         default: 
             return state
     }
@@ -29,6 +34,7 @@ export const mainReducer = (state = initialState, action) => {
 const setPrice = (priceCount) => ({ type: SET_PRICE, priceCount})
 const getGoods = (dataGoods) => ({type: GET_GOODS, dataGoods})
 const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
+const getTrash = (trashGoods) => ({type: GET_TRASH, trashGoods })
 
 export const setPriceHandler = (newPrice) => (dispatch) => {
     try {
@@ -53,6 +59,15 @@ export const requestGoods = (category, gender, count) => async (dispatch) => {
             dispatch(toggleIsFetching(false))
         }
     } catch(e) {
+        console.log(e)
+    }
+}
+
+export const setTrashHandler = (goods) => (dispatch) => {
+    try {
+        dispatch(getTrash(goods))
+        console.log(goods)
+    } catch(e) { 
         console.log(e)
     }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from 'primereact/button';
 import s from './Card.module.scss'
 
-export const Card = ({ item, price, clickHandler }) => {
+export const Card = ({ item, price, addedItemToTrash}) => {
 
     return (
         <div className={s.card}>
@@ -24,7 +24,7 @@ export const Card = ({ item, price, clickHandler }) => {
                     <a href={item.url} className={s.card__info__url} target='_blanc'>
                         Ссылка
                     </a>
-                    <Button label='+' style={{ display: 'block', marginTop: 5, padding: '0px 5px 3px 5px' }} onClick={() => clickHandler(price + item.price)}/>
+                    <Button label='+' style={{ display: 'block', marginTop: 5, padding: '0px 5px 3px 5px' }} onClick={() => addedItemToTrash(item, price)}/>
                 </div>
             </div>
         </div>

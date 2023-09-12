@@ -3,8 +3,17 @@ import { Card } from '../UI/Card';
 import { useNavigate } from 'react-router-dom';
 import { Loader } from '../UI/Loader';
 
-export const MainGoods = ({ isFetching, data, clickHandler, price, s }) => {
+export const MainGoods = ({ isFetching, data, clickHandler, price, s, addedToTrash, trashItems }) => {
     const navigate = useNavigate()
+
+    const addedItemToTrash = (item, price) => {
+        trashItems.push(item)
+        addedToTrash(trashItems)
+
+        clickHandler(price + item.price)
+    }
+    
+
     return (
         <div>
             <button onClick={
@@ -20,7 +29,7 @@ export const MainGoods = ({ isFetching, data, clickHandler, price, s }) => {
                         :
                         <div className={s.goods__flex}>
                             {data.map(
-                                (item, index) => <Card item={item} key={index} clickHandler={clickHandler} price={price} />
+                                (item, index) => <Card item={item} key={index} price = {price} addedItemToTrash = {addedItemToTrash}/>
                             )}
                         </div>
                 }
