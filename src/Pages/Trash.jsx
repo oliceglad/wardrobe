@@ -11,8 +11,6 @@ const Trash = ({ trashGoods, priceCount, setTrashHandler, setPriceHandler}) => {
         setPriceHandler(priceCount - item.price)
         setTrashHandler(newTrashGoods)
     }
-
-
     return (
         <div className='trash'>
             <h2 className='trash__title'>Корзина</h2>

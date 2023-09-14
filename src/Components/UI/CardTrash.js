@@ -1,12 +1,12 @@
 import React from 'react'
 import s from './CardTrash.module.scss'
 
-export const CardTrash = ({ item, deleteItem }) => {
+export const CardTrash = ({ item, deleteItem}) => {
 
     return (
         <div style={{display: 'flex'}}>
             <div className={s.card}>
-                <img src='https://cdn-icons-png.flaticon.com/512/4054/4054617.png' alt={item.name} />
+                <img src={item.images[0]} alt={item.name} />
                 <div className={s.card__info}>
                     <div className={s.card__info__name}>
                         {item.name}
