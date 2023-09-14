@@ -1,0 +1,33 @@
+.card {
+    display: flex;
+    width: 100%;
+
+    & img {
+        width: 150px;
+        height: 150px;
+    }
+
+    &__info {
+        margin-left: 20px;
+        min-height: 150px;
+        &__name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        &__brand {
+            color: grey;
+        }
+
+        &__price {
+            color: #6366F1;
+            font-weight: bold;
+        }
+    }
+
+
+    &__delete {
+        cursor: pointer;
+        align-self: center;
+    }
+}

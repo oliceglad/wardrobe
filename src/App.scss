@@ -20,3 +20,20 @@ a {
         margin-bottom: 20px;
     }
 }
+
+.trash {
+    padding-right: 100px;
+    padding-left: 100px;
+
+    &__container {
+        margin-top: 20px;
+    }
+
+    &__title {
+        margin-top: 20px;
+    }
+
+    &__result {
+        margin-top: 30px;
+    }
+}

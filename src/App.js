@@ -7,7 +7,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
-import { Trash } from './Pages/Trash';
+import { TrashContainer } from './Pages/Trash';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
             <Route path="/mywardrobe" Component={MyWardrobe} />
             <Route path="/makewardrobe/*" Component={MakeWardrobeContainer} />
             <Route path="*" element={<Navigate to="/makewardrobe" />} />
-            <Route path='/trash' Component={Trash}/>
+            <Route path='/trash' Component={TrashContainer}/>
           </Routes>
         </div>
       </BrowserRouter>
