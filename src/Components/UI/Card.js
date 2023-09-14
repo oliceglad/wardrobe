@@ -6,7 +6,7 @@ export const Card = ({ item, price, addedItemToTrash}) => {
 
     return (
         <div className={s.card}>
-            <img src='https://cdn-icons-png.flaticon.com/512/4054/4054617.png' />
+            <img src='https://cdn-icons-png.flaticon.com/512/4054/4054617.png' alt={item.name}/>
             <div className={s.card__info}>
                 <div className={s.card__info__name}>
                     {item.name}

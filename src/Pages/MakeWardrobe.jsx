@@ -1,11 +1,13 @@
 import React from 'react'
-import { Constructor } from '../../Components/Constructor/Constructor'
-import { GoodsContainer } from '../../Components/Goods/Goods'
+import { Constructor } from '../Components/Constructor/Constructor'
+import { GoodsContainer } from '../Components/Goods/Goods'
 import { Button } from 'primereact/button';
-import { setPriceHandler } from '../../redux/main-reducer';
+import { setPriceHandler } from '../redux/main-reducer';
 import { connect } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const MakeWardrobe = ({ setPriceHandler, priceCount }) => {
+    const navigate = useNavigate()
     
     return (
         <div className='wardrobe'>
@@ -16,7 +18,7 @@ const MakeWardrobe = ({ setPriceHandler, priceCount }) => {
             <div className='wardrobe__count'>
                 Итого: {priceCount} руб.
             </div>
-            <Button label="Купить" style={{ marginRight: 20 }} />
+            <Button label="Купить" style={{ marginRight: 20 }} onClick={ () => navigate('/trash')}/>
             <Button label="Сохранить" outlined />
         </div>
     )
