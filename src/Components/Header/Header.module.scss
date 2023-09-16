@@ -14,9 +14,26 @@
         &__link {
             color: white;
         }
+
+        @media (max-width: 415px) {
+            margin-top: 20px;
+        }
     }
 
     &__logo__text {
         color: white;
     }
+
+    @media (max-width: 770px) {
+        padding-right: 30px;
+        padding-left: 30px;    
+    }
+
+    @media (max-width: 415px) {
+        display: block;
+        padding-right: 10px;
+        padding-left: 10px;   
+    }
+
+    
 }
