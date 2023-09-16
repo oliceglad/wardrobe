@@ -40,4 +40,11 @@
             margin-bottom: 10px;
         }
     }
+
+
+    @media (max-width: 750px) {
+        &__flex {
+            justify-content: center;
+        }
+    }
 }
